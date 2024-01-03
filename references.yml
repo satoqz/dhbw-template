@@ -1,0 +1,8 @@
+# https://github.com/typst/hayagriva/blob/main/docs/file-format.md
+
+lorem-ipsum-generator:
+  type: web
+  title: "Lorem Ipsum - All the Facts - Lipsum generator"
+  url:
+    value: https://www.lipsum.com
+    date: 2024-01-03
