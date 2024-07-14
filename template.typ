@@ -36,7 +36,11 @@
   set page(paper: "a4", margin: 2.5cm, numbering: "I")
   set pagebreak(weak: true)
 
-  set text(size: 12pt, font: "CMU Sans Serif")
+  set text(
+    size: 12pt,
+    font: ("New Computer Modern Sans", "CMU Sans Serif"),
+  )
+
   set par(leading: 1em, justify: true)
 
   set list(indent: 0.75em)
