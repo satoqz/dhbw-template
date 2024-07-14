@@ -75,7 +75,7 @@
   show outline.entry.where(level: 1): it => [
     #if it.element.func() != heading { return it }
     #show ".": ""
-    #v(8pt) #strong(it)
+    #v(4pt) #strong(it)
   ]
 
   show raw.where(block: true): set align(left)
