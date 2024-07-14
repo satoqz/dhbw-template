@@ -103,15 +103,15 @@
     stack(
       spacing: 1fr,
       stack(dir: ltr, spacing: 1fr, ..logos),
+      2fr,
       text(size: 20pt, strong(title)),
       text(size: 14pt, strong(subtitle)),
-      [
-        #show strong: set text(size: 14pt)
-        #show strong: it => [#linebreak() #it #parbreak()]
-
-        presented to the *Department of Computer Science* for the *
-        Bachelor of Science* at the *DHBW Stuttgart* by #strong(author) submitted on #strong(date)
-      ],
+      [presented to the \ *Department of Computer Science*],
+      [for the \ *Bachelor of Science*],
+      [at the \ *DHBW Stuttgart*],
+      [by \ #text(size: 16pt, strong(author))],
+      [submitted on \ #strong(date)],
+      2fr,
       table(
         columns: (auto, 1fr, auto), align: left, stroke: none,
         ..details.keys().map(it => (strong(it), none)).zip(details.values()).flatten(),
