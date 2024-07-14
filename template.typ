@@ -128,18 +128,12 @@
   })
 
   align(horizon, [
-    #heading(outlined: false, level: 2, [Author's Declaration])
+    #set text(lang: "de")
+    #heading(outlined: false, level: 2, [Selbstständigkeitserklärung])
 
-    Hereby I solemnly declare:
+    Ich versichere hiermit, dass ich meine Bachelorarbeit mit dem Thema: #emph(title) selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe. Ich versichere zudem, dass die eingereichte elektronische Fassung mit der gedruckten Fassung, falls vorhanden, übereinstimmt.
 
-    + that this thesis, titled #emph(title) is entirely the product of my own work, unless otherwise indicated in the text or references, or acknowledged below;
-    + I have indicated the thoughts adopted directly or indirectly from other sources at the appropriate places within the document;
-    + this thesis has not been submitted either in whole or part, for a degree at this or any other university or institution;
-    + I have not published this thesis in the past;
-    + the printed version, if there is such, is equivalent to the submitted one.
-
-    I am aware that a dishonest declaration will entail legal consequences.
-    #v(32pt)
+    #v(16pt)
 
     Stuttgart, #date.display(date-format)
     #v(32pt)
