@@ -33,7 +33,7 @@
   let author = if type(author) != array { (author,) } else { author }
   set document(title: title, author: author, date: date)
 
-  set page(paper: "a4", margin: 2.5cm, numbering: "I")
+  set page(paper: "a4", margin: 2.5cm)
   set pagebreak(weak: true)
 
   set text(
@@ -42,6 +42,7 @@
   )
 
   set par(leading: 1em, justify: true)
+  show par: set block(spacing: 1.5em)
 
   set list(indent: 0.75em)
   set enum(indent: 0.75em)
@@ -49,9 +50,9 @@
   set math.equation(numbering: "1")
 
   set bibliography(title: "References")
-  set outline(indent: auto, depth: 2, fill: repeat(" . "))
 
-  show par: set block(spacing: 1.5em)
+  set outline(indent: auto, depth: 3, fill: repeat(" . "))
+  show outline: set heading(outlined: true)
 
   show heading.where(level: 1): set block(above: 2em, below: 2em)
   show heading.where(level: 2): set block(above: 2em, below: 1.5em)
@@ -94,7 +95,6 @@
 
   {
     set align(center)
-    set page(numbering: none)
     set par(justify: false)
 
     let author = author.join(" & ")
@@ -142,7 +142,12 @@
     #author.join(", ")
   ])
 
-  outline()
+  set page(numbering: "I")
+  counter(page).update(1)
+
+  outline(target: heading, title: "Table of Contents")
+  outline(target: figure.where(kind: image), title: "List of Figures")
+  outline(target: figure.where(kind: raw), title: "List of Listings")
 
   heading(level: 1, [Acronyms])
   table(
@@ -151,6 +156,7 @@
   )
 
   set heading(numbering: "1.1")
+
   set page(numbering: "1 / 1")
   counter(page).update(1)
 
