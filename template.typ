@@ -146,7 +146,7 @@
 
   heading(level: 1, [Acronyms])
   table(
-    columns: (auto, auto), inset: (left: 0em, right: 1em), stroke: none,
+    columns: (auto, auto), inset: (left: 0em, right: 2em), stroke: none,
     ..acronyms.keys().map(strong).zip(acronyms.values()).flatten(),
   )
 
