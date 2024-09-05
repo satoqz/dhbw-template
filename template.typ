@@ -146,8 +146,8 @@
   counter(page).update(1)
 
   outline(target: heading, title: "Table of Contents")
-  // outline(target: figure.where(kind: image), title: "List of Figures")
-  // outline(target: figure.where(kind: raw), title: "List of Listings")
+  outline(target: figure.where(kind: image), title: "List of Figures")
+  outline(target: figure.where(kind: raw), title: "List of Listings")
 
   heading(level: 1, [Acronyms])
   table(
