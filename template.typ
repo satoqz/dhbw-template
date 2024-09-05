@@ -92,15 +92,24 @@
   show raw.where(block: true): set par(justify: false)
   show raw.where(block: true): set text(size: 8pt)
 
-  show raw.where(block: true): set block(
-    radius: 2pt, inset: 8pt, width: 100%,
-    stroke: luma(128), fill: luma(240),
-  )
+  show raw.where(block: false): it => {
+    text(size: 4pt, " ") + box(
+      radius: 2pt, outset: 3pt, fill: luma(240), it
+    ) + text(size: 4pt, " ")
+  }
 
-  show raw.where(block: false): box.with(
-    radius: 2pt, inset: (x: 3pt), outset: (y: 3pt),
-    stroke: luma(128), fill: luma(240),
-  )
+  show raw.where(block: true): it => {
+    set block(radius: 2pt, inset: 8pt, width: 100%, fill: luma(240))
+    set par(leading: 0.75em)
+
+    show raw.line: it => {
+      text(fill: luma(120))[#it.number]
+      h(1em)
+      it.body
+    }
+
+    it
+  }
 
   {
     set align(center)
