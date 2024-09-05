@@ -59,7 +59,7 @@
 
   set bibliography(title: "References")
 
-  set outline(indent: auto, depth: 3, fill: repeat(" . "))
+  set outline(indent: auto, depth: 2, fill: repeat(" . "))
   show outline: set heading(outlined: true)
 
   show heading.where(level: 1): set block(above: 2em, below: 2em)
