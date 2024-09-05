@@ -47,6 +47,14 @@
   set list(indent: 0.75em)
   set enum(indent: 0.75em)
 
+  set ref(supplement: it => {
+		if it.func() == heading and it.level == 1 {
+      "Chapter"
+		} else {
+			it.supplement
+		}
+	})
+
   set math.equation(numbering: "1")
 
   set bibliography(title: "References")
