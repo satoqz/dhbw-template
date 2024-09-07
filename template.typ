@@ -99,16 +99,18 @@
   }
 
   show raw.where(block: true): it => {
-    set block(radius: 2pt, inset: 8pt, width: 100%, fill: luma(240))
-    set par(leading: 0.75em)
-
-    show raw.line: it => {
-      text(fill: luma(120))[#it.number]
-      h(1em)
-      it.body
-    }
-
-    it
+    show: block.with(
+      width: 100%, radius: 2pt, inset: 8pt,
+      fill: luma(240), stroke: luma(128),
+    )
+    grid(
+      columns: 2, align: (right, left),
+      row-gutter: 0.75em, column-gutter: 1em,
+      ..it.lines
+        .enumerate()
+        .map(((i, line)) => (text(fill: luma(120), [#(i + 1)]), line))
+        .flatten(),
+    )
   }
 
   {
